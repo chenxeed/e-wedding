@@ -16,7 +16,7 @@ function showConfetti (event: Event) {
 }
 
 </script>
-<div class="flex flex-col items-center justify-evenly h-full">
+<div class="page-height flex flex-col items-center justify-evenly">
   <p
     class="text-lg font-semibold text-center"
     transition:slide="{{ duration: 2000, delay: 1000 }}"
@@ -42,8 +42,8 @@ function showConfetti (event: Event) {
   </p>
 </div>
 <style lang="postcss">
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  </style>
+</style>
