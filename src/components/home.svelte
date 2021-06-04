@@ -16,7 +16,7 @@ function showConfetti (event: Event) {
 }
 
 </script>
-<div class="page-height flex flex-col items-center justify-evenly">
+<div class="page-min-height flex flex-col items-center justify-evenly px-2">
   <p
     class="text-lg font-semibold text-center"
     transition:slide="{{ duration: 2000, delay: 1000 }}"
@@ -39,6 +39,12 @@ function showConfetti (event: Event) {
     transition:slide="{{ duration: 2000, delay: 7000 }}"
     on:introend={e => showConfetti(e)}>Puri Tower 12th Floor<br/>
     <span class="text-lg">Jl. Martha Tilaar Block 69, Jakarta Pusat</span>
+  </p>
+  <p
+    class="text-base italic text-right self-end"
+    transition:slide="{{ duration: 2000, delay: 9000 }}">
+    <span>"True love is the joy of life."</span>
+    <br>- John Clarke
   </p>
 </div>
 <style lang="postcss">

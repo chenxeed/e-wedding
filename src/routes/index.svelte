@@ -2,8 +2,9 @@
 import { fade } from 'svelte/transition'
 import Entrance from '../components/entrance.svelte'
 import Home from '../components/home.svelte'
+import Story from '../components/story.svelte'
 
-let showEntrance = true
+let showEntrance = false
 
 </script>
 <div>
@@ -13,11 +14,14 @@ let showEntrance = true
     </section>
   {:else}
     <div in:fade>
-      <div class="flex flex-col h-screen">
-        <main class="flex-grow overflow-auto h-full">
-          <Home/>
+      <div class="h-screen">
+        <main class="overflow-auto page-height">
+          <div class="bg-gradient-to-b from-red-100 to-red-400 divide-y-8 divide-pink-200 divide-double">
+            <Home/>
+            <Story/>
+          </div>
         </main>
-        <nav class="flex justify-around items-center border-t-2 border-gray-700">
+        <nav class="flex-grow-0 flex justify-around items-center border-t-2 border-gray-700">
           <div class="flex flex-col items-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
@@ -53,6 +57,10 @@ nav {
 
 .page-height {
   height: calc(100vh - 70px);
+}
+
+.page-min-height {
+  min-height: calc(100vh - 70px);
 }
 
 </style>
