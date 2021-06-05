@@ -3,6 +3,7 @@ import { fade } from 'svelte/transition'
 import Entrance from '../components/entrance.svelte'
 import Home from '../components/home.svelte'
 import Story from '../components/story.svelte'
+import Join from '../components/join.svelte'
 
 let showEntrance = false
 
@@ -19,6 +20,7 @@ let showEntrance = false
           <div class="bg-gradient-to-b from-red-100 to-red-400 divide-y-8 divide-pink-200 divide-double">
             <Home/>
             <Story/>
+            <Join/>
           </div>
         </main>
         <nav class="flex-grow-0 flex justify-around items-center border-t-2 border-gray-700">
