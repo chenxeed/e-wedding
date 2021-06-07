@@ -17,7 +17,7 @@ let showEntrance = false
     <div in:fade>
       <div class="h-screen">
         <main class="overflow-auto page-height">
-          <div class="bg-gradient-to-b from-red-100 to-red-400 divide-y-8 divide-pink-200 divide-double">
+          <div class="bg-gradient-to-b from-red-100 to-red-400 divide-y-8 divide-pink-200">
             <Home/>
             <Story/>
             <Join/>
@@ -52,6 +52,26 @@ let showEntrance = false
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  @responsive {
+    .text-shadow {
+      text-shadow: 0 2px 4px rgba(0,0,0,0.10);
+    }
+
+    .text-shadow-md {
+      text-shadow: 0 4px 8px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.08);
+    }
+
+    .text-shadow-lg {
+      text-shadow: 0 15px 30px rgba(0,0,0,0.11), 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .text-shadow-none {
+      text-shadow: none;
+    }
+  }
+}
 
 nav {
   height: 70px;
