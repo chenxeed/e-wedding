@@ -19,7 +19,7 @@ function showConfetti (event: Event) {
 
 </script>
 <div
-  class="relative page-min-height flex flex-col items-center justify-evenly px-2">
+  class="relative page-min-height flex flex-col items-center justify-evenly">
   <div
     class="absolute z-0 w-full h-full opacity-60 shadow-2xl bg-no-repeat bg-left-top bg-auto sm:w-[600px] lg:self-start"
     style="background-image: url('{photo1}')"/>

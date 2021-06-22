@@ -5,7 +5,7 @@ import Home from '../components/home.svelte'
 import Story from '../components/story.svelte'
 import Join from '../components/join.svelte'
 
-let showEntrance = false
+let showEntrance = true
 
 </script>
 <div>

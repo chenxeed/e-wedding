@@ -46,7 +46,7 @@ function entranceDone(ev: TransitionEvent) {
 @tailwind utilities;
 
 .wall {
-  @apply bg-yellow-100;
+  @apply bg-gradient-to-b from-red-100 to-red-400;
 
 }
 
