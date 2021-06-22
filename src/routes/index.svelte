@@ -49,12 +49,18 @@ let showEntrance = true
   {/if}
 </div>
 <style global lang="postcss">
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer utilities {
   @responsive {
+    .ff-parisienne {
+      font-family: 'Parisienne', cursive;
+    }
+
     .text-shadow {
       text-shadow: 0 2px 4px rgba(0,0,0,0.10);
     }

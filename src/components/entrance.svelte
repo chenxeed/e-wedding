@@ -22,7 +22,7 @@ function entranceDone(ev: TransitionEvent) {
 		on:transitionend={entranceDone}>
     <div class="wall relative w-full">
       <div class="mt-8 text-center">
-        <h1 class="text-3xl font-bold">Kelvin & Rita</h1>
+        <h1 class="text-3xl font-bold ff-parisienne">Kelvin & Rita</h1>
       </div>
       <button bind:this={gate} class="gate mt-8 m-auto" on:click={openGateDoor}>
         <div class="gate-door door-left">

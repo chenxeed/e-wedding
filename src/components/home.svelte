@@ -31,7 +31,7 @@ function showConfetti (event: Event) {
     transition:slide="{{ duration: 2000, delay: 1000 }}"
     on:introend={e => showConfetti(e)}>You are cordially invited to attend the wedding of</p>
   <p
-    class="relative z-10 text-3xl font-extrabold text-center"
+    class="relative z-10 text-3xl font-extrabold text-center ff-parisienne"
     transition:slide="{{ duration: 2000, delay: 3000 }}"
     on:introend={e => showConfetti(e)}>
       Kelvin
@@ -50,7 +50,7 @@ function showConfetti (event: Event) {
     <span class="text-lg">Jl. Martha Tilaar Block 69, Jakarta Pusat</span>
   </p>
   <p
-    class="relative z-10 text-base italic text-right self-end sm:self-center"
+    class="relative z-10 text-base italic text-right self-end sm:self-center bg-gray-50 bg-opacity-50 p-4"
     transition:slide="{{ duration: 2000, delay: 9000 }}">
     <span>"True love is the joy of life."</span>
     <br>- John Clarke
