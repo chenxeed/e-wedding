@@ -40,26 +40,26 @@ function blurSelf(e: MouseEvent) {
       <div class="flex w-full mt-10" transition:fade="{{ duration: 2000, delay: 1000 }}">
         <div class="flex-grow w-full">
           <div class="relative max-w-xs h-40 m-auto">
-            <div class="transition-all absolute top-16 transform -rotate-12 skew-y-6 overflow-hidden w-20 h-20 border-4 border-white focus:w-40 focus:h-40 focus:-top-10 focus:z-10 cursor-pointer" tabindex="0" on:mousedown={blurSelf}>
+            <div class="transition-all absolute top-16 transform -rotate-12 skew-y-6 overflow-hidden w-20 h-20 border-4 border-white focus:w-40 focus:h-40 focus:-top-10 focus:z-10 cursor-pointer photo-shadow" tabindex="0" on:mousedown={blurSelf}>
               <img src={kelvin1} alt="kelvin-1" class="w-full h-full object-cover object-bottom" />
             </div>
-            <div class="transition-all absolute top-0 left-1/2 transform skew-y-6 -translate-x-1/2 overflow-hidden w-20 h-20 border-4 border-white focus:w-40 focus:h-40 focus:-top-10 focus:z-10 cursor-pointer" tabindex="0" on:mousedown={blurSelf}>
+            <div class="transition-all absolute top-0 left-1/2 transform skew-y-6 -translate-x-1/2 overflow-hidden w-20 h-20 border-4 border-white focus:w-40 focus:h-40 focus:-top-10 focus:z-10 cursor-pointer photo-shadow" tabindex="0" on:mousedown={blurSelf}>
               <img src={kelvin2} alt="kelvin-2" class="w-full h-full object-cover object-center" />
             </div>
-            <div class="transition-all absolute top-16 right-0 transform rotate-12 skew-y-6 overflow-hidden w-20 h-20 border-4 border-white focus:w-40 focus:h-40 focus:-top-10 focus:z-10 cursor-pointer" tabindex="0" on:mousedown={blurSelf}>
+            <div class="transition-all absolute top-16 right-0 transform rotate-12 skew-y-6 overflow-hidden w-20 h-20 border-4 border-white focus:w-40 focus:h-40 focus:-top-10 focus:z-10 cursor-pointer photo-shadow" tabindex="0" on:mousedown={blurSelf}>
               <img src={kelvin3} alt="kelvin-3" class="w-full h-full object-cover object-center" />
             </div>
           </div>
         </div>
         <div class="flex-grow w-full">
           <div class="relative max-w-xs h-40 m-auto">
-            <div class="transition-all absolute top-16 transform -rotate-6 skew-y-6 overflow-hidden w-20 h-20 border-4 border-white focus:w-40 focus:h-40 focus:-top-10 focus:z-10 cursor-pointer" tabindex="0" on:mousedown={blurSelf}>
+            <div class="transition-all absolute top-16 transform -rotate-6 skew-y-6 overflow-hidden w-20 h-20 border-4 border-white focus:w-40 focus:h-40 focus:-top-10 focus:z-10 cursor-pointer photo-shadow" tabindex="0" on:mousedown={blurSelf}>
               <img src={rita1} alt="rita1-1" class="w-full h-full object-cover object-bottom" />
             </div>
-            <div class="transition-all absolute top-0 left-1/2 transform skew-y-6 -translate-x-1/2 overflow-hidden w-20 h-20 border-4 border-white focus:w-40 focus:h-40 focus:-top-10 focus:z-10 cursor-pointer" tabindex="0" on:mousedown={blurSelf}>
+            <div class="transition-all absolute top-0 left-1/2 transform skew-y-6 -translate-x-1/2 overflow-hidden w-20 h-20 border-4 border-white focus:w-40 focus:h-40 focus:-top-10 focus:z-10 cursor-pointer photo-shadow" tabindex="0" on:mousedown={blurSelf}>
               <img src={rita2} alt="rita-2" class="w-full h-full object-cover object-left" />
             </div>
-            <div class="transition-all absolute top-16 right-0 transform overflow-hidden w-20 h-20 border-4 border-white focus:w-40 focus:h-40 focus:-top-10 focus:z-10 cursor-pointer" tabindex="0" on:mousedown={blurSelf}>
+            <div class="transition-all absolute top-16 right-0 transform overflow-hidden w-20 h-20 border-4 border-white focus:w-40 focus:h-40 focus:-top-10 focus:z-10 cursor-pointer photo-shadow" tabindex="0" on:mousedown={blurSelf}>
               <img src={rita3} alt="rita-3" class="w-full h-full object-cover object-center" />
             </div>
           </div>
@@ -72,7 +72,7 @@ function blurSelf(e: MouseEvent) {
         Hingga suatu hari mereka dipertemukan di tempat kerja mereka... 👨‍💼👩‍💼
       </p>
       <div class="w-full mt-5" transition:fade="{{ duration: 2000, delay: 4000 }}">
-        <div class="m-auto transition-all transform -rotate-6 overflow-hidden w-60 h-40 border-4 border-white focus:scale-125 focus:rotate-12 cursor-pointer" tabindex="0" on:mousedown={blurSelf}>
+        <div class="m-auto transition-all transform -rotate-6 overflow-hidden w-60 h-40 border-4 border-white focus:scale-125 focus:rotate-12 cursor-pointer photo-shadow" tabindex="0" on:mousedown={blurSelf}>
           <img src={kelvinrita1} alt="kelvin-rita-1" class="w-full h-full object-cover object-bottom" />
         </div>
       </div>
@@ -81,13 +81,13 @@ function blurSelf(e: MouseEvent) {
       </p>
       <div class="w-full mt-5" transition:fade="{{ duration: 2000, delay: 6000 }}">
         <div class="relative max-w-xs h-60 m-auto">
-          <div class="transition-all absolute top-24 left-1/2 transform skew-y-6 -translate-x-1/2 overflow-hidden w-40 h-40 border-4 border-white focus:scale-125 focus:z-10 cursor-pointer" tabindex="0" on:mousedown={blurSelf}>
+          <div class="transition-all absolute top-24 left-1/2 transform skew-y-6 -translate-x-1/2 overflow-hidden w-40 h-40 border-4 border-white focus:scale-125 focus:z-10 cursor-pointer photo-shadow" tabindex="0" on:mousedown={blurSelf}>
             <img src={kelvinrita3} alt="kelvin-rita-2" class="w-full h-full object-cover object-left" />
           </div>
-          <div class="transition-all absolute top-0 right-0 transform rotate-3 skew-y-6 overflow-hidden w-40 h-40 border-4 border-white focus:scale-125 focus:z-10 cursor-pointer" tabindex="0" on:mousedown={blurSelf}>
+          <div class="transition-all absolute top-0 right-0 transform rotate-3 skew-y-6 overflow-hidden w-40 h-40 border-4 border-white focus:scale-125 focus:z-10 cursor-pointer photo-shadow" tabindex="0" on:mousedown={blurSelf}>
             <img src={kelvinrita4} alt="kelvin-rita-3" class="w-full h-full object-cover object-center" />
           </div>
-          <div class="transition-all absolute top-0 transform -rotate-6 skew-y-6 overflow-hidden w-40 h-40 border-4 border-white focus:scale-125 focus:z-10 cursor-pointer" tabindex="0" on:mousedown={blurSelf}>
+          <div class="transition-all absolute top-0 transform -rotate-6 skew-y-6 overflow-hidden w-40 h-40 border-4 border-white focus:scale-125 focus:z-10 cursor-pointer photo-shadow" tabindex="0" on:mousedown={blurSelf}>
             <img src={kelvinrita2} alt="kelvin-rita-1" class="w-full h-full object-cover object-bottom" />
           </div>
         </div>
@@ -97,13 +97,13 @@ function blurSelf(e: MouseEvent) {
       </p>
       <div class="w-full mt-5" transition:fade="{{ duration: 2000, delay: 8000 }}">
         <div class="relative max-w-xs h-80 m-auto">
-          <div class="transition-all absolute top-40 transform skew-y-6 overflow-hidden w-40 h-40 border-4 border-white focus:scale-125 focus:z-10 cursor-pointer" tabindex="0" on:mousedown={blurSelf}>
+          <div class="transition-all absolute top-40 transform skew-y-6 overflow-hidden w-40 h-40 border-4 border-white focus:scale-125 focus:z-10 cursor-pointer photo-shadow" tabindex="0" on:mousedown={blurSelf}>
             <img src={kelvinritasayyes1} alt="kelvin-rita-say-yes-1" class="w-full h-full object-cover object-bottom" />
           </div>
-          <div class="transition-all absolute top-40 right-0 transform -skew-y-6 overflow-hidden w-40 h-40 border-4 border-white focus:scale-125 focus:z-10 cursor-pointer" tabindex="0" on:mousedown={blurSelf}>
+          <div class="transition-all absolute top-40 right-0 transform -skew-y-6 overflow-hidden w-40 h-40 border-4 border-white focus:scale-125 focus:z-10 cursor-pointer photo-shadow" tabindex="0" on:mousedown={blurSelf}>
             <img src={kelvinritasayyes3} alt="kelvin-rita-say-yes-3" class="w-full h-full object-cover object-center" />
           </div>
-          <div class="transition-all absolute top-0 left-1/2 transform -translate-x-1/2 overflow-hidden w-60 h-40 border-4 border-white focus:scale-125 focus:z-10 cursor-pointer" tabindex="0" on:mousedown={blurSelf}>
+          <div class="transition-all absolute top-0 left-1/2 transform -translate-x-1/2 overflow-hidden w-60 h-40 border-4 border-white focus:scale-125 focus:z-10 cursor-pointer photo-shadow" tabindex="0" on:mousedown={blurSelf}>
             <img src={kelvinritasayyes2} alt="kelvin-rita-say-yes-2" class="w-full h-full object-cover object-left" />
           </div>
         </div>
@@ -115,5 +115,9 @@ function blurSelf(e: MouseEvent) {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.photo-shadow {
+  box-shadow: 2px 2px 5px black;;
+}
 
 </style>
