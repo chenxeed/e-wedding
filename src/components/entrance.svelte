@@ -13,7 +13,7 @@ let gate: HTMLElement;
 let styleVar = [`--img-wood: url(${wood})`, `--img-bg: url(${bg})`].join(';')
 
 function openGateDoor() {
-  open = !open
+  open = true
 }
 
 function entranceDone(ev: TransitionEvent) {
@@ -21,6 +21,10 @@ function entranceDone(ev: TransitionEvent) {
     dispatch('done')
   }
 }
+
+setTimeout(() => {
+  openGateDoor()
+}, 2000)
 </script>
 <div class="entrance overflow-hidden" class:open style={styleVar}>
   <div
