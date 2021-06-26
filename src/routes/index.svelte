@@ -17,7 +17,7 @@ function scrollTo (targetId: string) {
 }
 
 </script>
-<div>
+<div class="ff-amatic text-xl">
   {#if showEntrance}
     <section>
       <Entrance on:done={() => showEntrance = false}/>
@@ -65,6 +65,7 @@ function scrollTo (targetId: string) {
 </div>
 <style global lang="postcss">
 @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -74,6 +75,10 @@ function scrollTo (targetId: string) {
   @responsive {
     .ff-parisienne {
       font-family: 'Parisienne', cursive;
+    }
+
+    .ff-amatic {
+      font-family: 'Amatic SC', cursive;
     }
 
     .text-shadow {

@@ -36,7 +36,7 @@ function blurSelf(e: MouseEvent) {
     {#if showTitle}
       <p
         transition:fade="{{ duration: 2000, delay: 1000 }}"
-        class="text-center text-4xl mt-10">Our Story</p>
+        class="text-center font-semibold text-4xl mt-10 ff-parisienne">Our Story</p>
       <div class="flex w-full mt-10" transition:fade="{{ duration: 2000, delay: 1000 }}">
         <div class="flex-grow w-full">
           <div class="relative max-w-xs h-40 m-auto">

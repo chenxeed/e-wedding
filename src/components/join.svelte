@@ -10,7 +10,7 @@ let showQuestion = false
   class="page-min-height flex flex-col items-center justify-evenly px-2">
   {#if showQuestion}
     <p
-      class="text-xl font-semibold text-center"
+      class="text-4xl font-semibold text-center ff-parisienne"
       transition:fly="{{ duration: 2000, delay: 1000 }}">
       Are you coming?
     </p>

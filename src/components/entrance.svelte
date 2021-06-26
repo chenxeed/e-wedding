@@ -33,10 +33,10 @@ setTimeout(() => {
     <div class="wall relative w-full flex-grow flex flex-col">
       <div class="flex-grow">
         <div class="mt-8 text-center">
-          <div class="text-xl font-bold ff-parisienne bg-gray-100 p-5 shadow-inner">Dear Ms Liana and Family</div>
+          <div class="text-xl font-bold ff-parisienne bg-gray-100 p-5 inner-shadow mx-2">Dear Ms Liana and Family</div>
         </div>
       </div>
-      <h1 class="text-3xl font-bold ff-parisienne justify-self-end text-center m-auto px-8 py-7 bg-gray-50 rounded-md relative shadow-inner">
+      <h1 class="text-3xl font-bold ff-parisienne justify-self-end text-center m-auto px-8 py-7 bg-gray-50 rounded-md relative inner-shadow">
         Kelvin & Rita
         <br/><span class="text-xl">Wedding Invitation</span>
         <!-- Frame image source: https://super--anime.blogspot.com/2020/09/images-of-border-picture-frame-anime.html-->
@@ -163,5 +163,9 @@ setTimeout(() => {
 }
 .entrance.open .gate-door.door-right {
   transform: perspective(300px) rotateY(180deg);
+}
+
+.inner-shadow {
+  box-shadow: inset 0 0 5px #000;
 }
 </style>
