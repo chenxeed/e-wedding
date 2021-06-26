@@ -1,10 +1,16 @@
 <script lang="ts">
 import { createEventDispatcher } from 'svelte';
+import bg from '../assets/entrance-bg.png';
+import wood from '../assets/wood-pattern.jpg';
+import photo1 from '../assets/photo-1.jpg';
+import flowerFrameTop from '../assets/flower-frame-top.png';
+import flowerFrameBottom from '../assets/flower-frame-bottom.png';
 
 const dispatch = createEventDispatcher();
 
 let open = false
 let gate: HTMLElement;
+let styleVar = [`--img-wood: url(${wood})`, `--img-bg: url(${bg})`].join(';')
 
 function openGateDoor() {
   open = !open
@@ -16,29 +22,42 @@ function entranceDone(ev: TransitionEvent) {
   }
 }
 </script>
-<div class="entrance overflow-hidden" class:open>
+<div class="entrance overflow-hidden" class:open style={styleVar}>
   <div
     class="entrance-container h-screen flex flex-col items-center"
 		on:transitionend={entranceDone}>
-    <div class="wall relative w-full">
-      <div class="mt-8 text-center">
-        <h1 class="text-3xl font-bold ff-parisienne">Kelvin & Rita</h1>
+    <div class="wall relative w-full flex-grow flex flex-col">
+      <div class="flex-grow">
+        <div class="mt-8 text-center">
+          <div class="text-xl font-bold ff-parisienne bg-gray-100 p-5 shadow-inner">Dear Ms Liana and Family</div>
+        </div>
       </div>
-      <button bind:this={gate} class="gate mt-8 m-auto" on:click={openGateDoor}>
+      <h1 class="text-3xl font-bold ff-parisienne justify-self-end text-center m-auto px-8 py-7 bg-gray-50 rounded-md relative shadow-inner">
+        Kelvin & Rita
+        <br/><span class="text-xl">Wedding Invitation</span>
+        <!-- Frame image source: https://super--anime.blogspot.com/2020/09/images-of-border-picture-frame-anime.html-->
+        <img src={flowerFrameTop} alt="frame-flower" class="absolute -right-2 -top-4 w-24"/>
+        <img src={flowerFrameBottom} alt="frame-flower" class="absolute -left-2 -bottom-4 w-24"/>
+      </h1>
+      <button bind:this={gate} class="gate mt-8 mx-auto justify-self-end" on:click={openGateDoor}>
+        <!-- Background image source: https://media.istockphoto.com/vectors/brown-wood-texture-background-vector-id1090359792?b=1&k=6&m=1090359792&s=612x612&w=0&h=JxwERGGl94uebFivZm4sHb9B0x_9p_0YuIHgk2bpiDI=-->
         <div class="gate-door door-left">
           <div class="box"/>
+          <div class="knob"/>
           <div class="box"/>
         </div>
         <div class="gate-door door-right">
           <div class="box"/>
+          <div class="knob"/>
           <div class="box"/>
         </div>
       </button>
     </div>
     <div class="floor relative w-full">
-      <div class="carpet m-auto"></div>
     </div>
   </div>
+  <!-- Preload here so it's already loaded after the entrance-->
+  <img src={photo1} class="w-0 h-0" alt="invitation-background-hidden"/>
 </div>
 <style lang="postcss">
 @tailwind base;
@@ -46,16 +65,18 @@ function entranceDone(ev: TransitionEvent) {
 @tailwind utilities;
 
 .wall {
-  @apply bg-gradient-to-b from-red-100 to-red-400;
-
+  @apply relative bg-gradient-to-b backdrop-filter backdrop-brightness-150;
+  --tw-gradient-from: #F7E7CE;
+  --tw-gradient-to: #b99d71;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(254, 243, 199, 0));
+  background-image: var(--img-bg);
 }
 
 .gate {
   @apply
-    w-40 h-80
+    w-64 h-80
     flex flex-row
     relative z-20
-    bg-gray-800;
 }
 
 .gate:focus {
@@ -64,49 +85,73 @@ function entranceDone(ev: TransitionEvent) {
 
 .gate-door {
   @apply
+    relative overflow-hidden
     w-1/2 h-full
-    bg-yellow-700
+    bg-gray-200
     flex flex-col justify-around items-center
-    border-8 border-double border-yellow-500 box-border
+    border border-gray-800
     transition-transform ease-in-out duration-1000;
+  box-shadow: inset 0 0 5px #000000;
+}
+.gate-door::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-image: var(--img-wood);
+  opacity: .3;
+  pointer-events: none;
 }
 
 .gate-door.door-left {
   @apply
-    origin-left;
+    origin-left rounded-tl-3xl;
 }
 
 .gate-door.door-right {
   @apply
-    origin-right;
+    origin-right rounded-tr-3xl;
 }
 
 .gate-door .box {
-  @apply w-10 h-10 bg-yellow-600 border-8 border-double border-yellow-500;
+  @apply w-16 h-16 border-2 border-gray-200;
+  box-shadow: inset 0 0 5px #000000;
+  background-image: var(--img-wood);
+}
+
+.gate-door .knob {
+  @apply w-5 h-5 rounded-full bg-gray-300 border border-black;
+}
+
+.gate-door.door-left .knob {
+  @apply self-end mr-5;
+}
+.gate-door.door-right .knob {
+  @apply self-start ml-5;
 }
 
 .floor {
-  @apply bg-gray-200;
-}
-
-.carpet {
-  @apply
-    w-40 relative z-10 bg-red-500;
-  height: 1000px;
-  transform: perspective(700px) rotateX(76deg);
-  transform-origin: center top;
+  @apply bg-gradient-to-b;
+  height: 50px;
+  --tw-gradient-from: #b99d71;
+  --tw-gradient-to: #F7E7CE;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(254, 243, 199, 0));
 }
 
 /* OPEN ANIMATION */
 .entrance.open .entrance-container {
   @apply
     transition-transform ease-in;
+  transform-origin: center 85vh;
   transition-duration: 3s;
   transform: scale(5);
-  transform-origin: center 250px;
+  transform-origin: bottom 250px;
 }
 .entrance.open .gate {
-  @apply transition-colors bg-gray-50;
+  @apply bg-gray-50;
   transition-duration: 3s;
 }
 .entrance.open .gate-door.door-left {
