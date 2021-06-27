@@ -22,9 +22,9 @@ function entranceDone(ev: TransitionEvent) {
   }
 }
 
-// setTimeout(() => {
-//   openGateDoor()
-// }, 2000)
+setTimeout(() => {
+  openGateDoor()
+}, 4000)
 </script>
 <div class="entrance overflow-hidden" class:open style={styleVar}>
   <div
