@@ -19,7 +19,7 @@ function showConfetti (event: Event) {
 
 </script>
 <div
-  class="relative page-min-height flex flex-col items-center justify-evenly">
+  class="relative page-min-height flex flex-col max-w-lg m-auto lg:max-w-none overflow-hidden lg:justify-evenly">
   <div
     class="absolute z-0 w-full h-full opacity-60 shadow-2xl bg-no-repeat bg-left-top bg-auto sm:w-[600px] lg:self-start"
     style="background-image: url('{photo1}')"/>
@@ -27,11 +27,11 @@ function showConfetti (event: Event) {
     class="hidden absolute z-0 w-full h-full opacity-60 shadow-2xl bg-no-repeat bg-left-top bg-auto sm:w-[600px] sm:self-end lg:block"
     style="background-image: url('{photo2}')"/>
   <p
-    class="relative z-10 text-lg font-semibold text-center text-shadow"
+    class="relative z-10 text-lg font-semibold text-center text-shadow mt-8 lg:mt-0"
     transition:slide="{{ duration: 2000, delay: 1000 }}"
     on:introend={e => showConfetti(e)}>You are cordially invited to attend the wedding of</p>
   <p
-    class="relative z-10 text-3xl font-extrabold text-center ff-parisienne"
+    class="relative z-10 text-4xl font-extrabold text-center ff-parisienne mt-20 lg:mt-0"
     transition:slide="{{ duration: 2000, delay: 3000 }}"
     on:introend={e => showConfetti(e)}>
       Kelvin
@@ -39,19 +39,15 @@ function showConfetti (event: Event) {
       <br>Rita
   </p>
   <p
-    class="relative z-10 text-xl font-extrabold text-center"
+    class="relative z-10 text-xl font-extrabold px-4 self-start lg:self-center lg:text-center bg-gray-50 bg-opacity-50 p-4 mt-8 lg:mt-0"
     transition:slide="{{ duration: 2000, delay: 5000 }}"
-    on:introend={e => showConfetti(e)}>Sunday, 12th Sept '21<br/>7 - 9PM
-  </p>
-  <p
-    class="relative z-10 text-xl font-extrabold text-center"
-    transition:slide="{{ duration: 2000, delay: 7000 }}"
-    on:introend={e => showConfetti(e)}>Puri Tower 12th Floor<br/>
+    on:introend={e => showConfetti(e)}>Sunday, 12th Sept '21, 7 - 9PM
+    <br/>
     <span class="text-lg">Jl. Martha Tilaar Block 69, Jakarta Pusat</span>
   </p>
   <p
-    class="relative z-10 text-base italic text-right self-end sm:self-center bg-gray-50 bg-opacity-50 p-4"
-    transition:slide="{{ duration: 2000, delay: 9000 }}">
+    class="relative z-10 text-base italic text-right self-start lg:self-center bg-gray-50 bg-opacity-50 p-4 mt-10 lg:mt-0"
+    transition:slide="{{ duration: 2000, delay: 7000 }}">
     <span>"True love is the joy of life."</span>
     <br>- John Clarke
   </p>
