@@ -25,7 +25,7 @@ function showConfetti (event: Event) {
     style="background-image: url('{photo1}')"/>
   <div
     class="hidden absolute z-0 w-full h-full shadow-2xl bg-no-repeat bg-left-top bg-auto sm:w-[600px] sm:self-end lg:block"
-    style="background-image: url('{photo2}')"/>
+    style="background-image: url('{photo2}'); transform: scaleX(-1)"/>
   <p
     class="relative z-10 text-lg font-semibold text-center text-shadow mt-8 lg:mt-0"
     transition:slide="{{ duration: 2000, delay: 1000 }}"
