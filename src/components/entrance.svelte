@@ -59,7 +59,7 @@ function entranceDone(ev: TransitionEvent) {
         </p>
         <div class="mt-5">
           <button
-            class="bg-yellow-600 hover:bg-yellow-400 text-white font-bold py-2 px-4 border-b-4 border-yellow-700 hover:border-yellow-500 rounded w-full transition-all"
+            class="bg-yellow-600 hover:bg-yellow-400 text-white font-bold py-2 px-4 border-b-4 border-yellow-700 hover:border-yellow-500 rounded w-full transition-all animate-pulse"
             on:click={ () => open = true }
             in:fly={{ duration: 2000, delay: 4000 }}>
             Open Invitation

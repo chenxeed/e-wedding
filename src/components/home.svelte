@@ -1,45 +1,30 @@
 <script lang="ts">
-import { slide } from 'svelte/transition';
-import confetti from 'canvas-confetti';
+import { slide, fade } from 'svelte/transition';
 import photo1 from '../assets/photo-1.jpg';
 import photo2 from '../assets/photo-2.jpg';
-
-function showConfetti (event: Event) {
-  const element = event.target as HTMLElement
-  const bound = element.getBoundingClientRect()
-  const x = ((bound.left + bound.right) / 2) / window.innerWidth
-  const y = ((bound.top + bound.bottom) / 2) / window.innerHeight
-  confetti({
-    origin: {
-      x,
-      y
-    }
-  })
-}
 
 </script>
 <div
   class="relative page-min-height flex flex-col max-w-lg m-auto lg:max-w-none overflow-hidden lg:justify-evenly">
   <div
+    transition:fade="{{ duration: 3000, delay: 500 }}"
     class="absolute z-0 w-full h-full shadow-2xl bg-no-repeat bg-left-top bg-auto sm:w-[600px] lg:self-start"
     style="background-image: url('{photo1}')"/>
   <div
+    transition:fade="{{ duration: 3000, delay: 500 }}"
     class="hidden absolute z-0 w-full h-full shadow-2xl bg-no-repeat bg-left-top bg-auto sm:w-[600px] sm:self-end lg:block"
     style="background-image: url('{photo2}'); transform: scaleX(-1)"/>
   <p
     class="relative z-10 text-lg font-semibold text-center text-shadow mt-8 lg:mt-0"
-    transition:slide="{{ duration: 2000, delay: 1000 }}"
-    on:introend={e => showConfetti(e)}>You are cordially invited to attend the wedding of</p>
+    transition:slide="{{ duration: 2000, delay: 1000 }}">You are cordially invited to attend the wedding of</p>
   <p
-    class="relative z-10 text-4xl font-extrabold text-center ff-parisienne mt-12 lg:mt-0"
-    transition:slide="{{ duration: 2000, delay: 3000 }}"
-    on:introend={e => showConfetti(e)}>
+    class="relative z-10 text-4xl font-extrabold text-center ff-parisienne mt-12 lg:mt-0 text-yellow-600"
+    transition:slide="{{ duration: 2000, delay: 3000 }}">
       Kelvin & Rita
   </p>
   <p
     class="relative z-10 text-xl font-extrabold px-4 self-start lg:self-center lg:text-center bg-gray-50 bg-opacity-50 p-4 mt-16 lg:mt-0"
-    transition:slide="{{ duration: 2000, delay: 5000 }}"
-    on:introend={e => showConfetti(e)}>Sunday, 12th Sept '21, 7 - 9PM
+    transition:slide="{{ duration: 2000, delay: 5000 }}">Sunday, 12th Sept '21, 7 - 9PM
     <br/>
     <span class="text-lg">Jl. Martha Tilaar Block 69, Jakarta Pusat</span>
   </p>
