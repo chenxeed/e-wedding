@@ -5,6 +5,7 @@ import photo1 from '../assets/photo-1.jpg';
 import flowerFrameTop from '../assets/flower-frame-top.png';
 import flowerFrameBottom from '../assets/flower-frame-bottom.png';
 import kelvinRitaEntrance from '../assets/kelvin-rita-entrance.jpg';
+import saveTheDate from '../assets/save-the-date.png';
 
 const dispatch = createEventDispatcher();
 
@@ -42,13 +43,11 @@ function entranceDone(ev: TransitionEvent) {
         <p class="text-2xl font-bold">{ invitationName }</p>
       </div>
       <div class="absolute right-4 top-0 h-full w-60">
-        <p class="mt-56 text-right" in:fly={{ duration: 2000, delay: 1000 }}>
-          <span class="text-5xl text-yellow-700">Save</span>
-          <br/>
-          <span class="text-3xl">the</span>
-          <br/>
-          <span class="text-5xl text-yellow-700">Date</span>
-        </p>
+        <div
+          class="mt-56 flex justify-end"
+          in:fly={{ duration: 2000, delay: 2000 }}>
+          <img src={saveTheDate} alt="save the date" class="w-28">
+        </div>
         <p class="mt-5 text-right" in:fly={{ duration: 2000, delay: 2000 }}>for the wedding of</p>
         <p class="mt-5 text-right" in:fly={{ duration: 2000, delay: 3000 }}>
           <span class="text-4xl text-yellow-700">Kelvin</span>
@@ -77,7 +76,7 @@ function entranceDone(ev: TransitionEvent) {
 @tailwind utilities;
 
 .entrance-container {
-  @apply relative items-center h-screen max-w-xl m-auto sm:border-2 sm:border-yellow-300 lg:h-[700px];
+  @apply relative items-center h-screen max-w-xl m-auto sm:border-2 sm:border-yellow-300 lg:h-[700px] lg:rounded-tr-3xl lg:rounded-bl-3xl;
 }
 
 /* OPEN ANIMATION */
