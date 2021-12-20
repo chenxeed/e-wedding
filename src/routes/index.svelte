@@ -102,8 +102,22 @@ function runConfetti () {
   {/if}
 </div>
 <style global lang="postcss">
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+@font-face {
+  font-family: "Parisienne";
+  src: url("/fonts/Parisienne-Regular.ttf");
+  font-display: block;
+}
+@font-face {
+  font-family: "Amatic SC";
+  src: url("/fonts/AmaticSC-Regular.ttf");
+  font-display: block;
+}
+@font-face {
+  font-family: "Amatic SC";
+  src: url("/fonts/AmaticSC-Bold.ttf");
+  font-weight: bold;
+  font-display: block;
+}
 
 @tailwind base;
 @tailwind components;
