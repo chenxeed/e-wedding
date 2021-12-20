@@ -26,10 +26,6 @@ function runConfetti () {
   var animationEnd = Date.now() + duration;
   var skew = 1;
 
-  function randomInRange(min, max) {
-    return Math.random() * (max - min) + min;
-  }
-
   (function frame() {
     var timeLeft = animationEnd - Date.now();
     var ticks = Math.max(200, 500 * (timeLeft / duration));
