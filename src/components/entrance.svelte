@@ -6,18 +6,24 @@ import flowerFrameTop from '../assets/flower-frame-top.png';
 import flowerFrameBottom from '../assets/flower-frame-bottom.png';
 import kelvinRitaEntrance from '../assets/kelvin-rita-entrance.jpg';
 import saveTheDate from '../assets/save-the-date.png';
+import { authenticate, getInvitedGuest } from '../module/sheet';
 
 const dispatch = createEventDispatcher();
 
 let invitationName = ''
+let invited = true
 
 let open = false
 let entrance: HTMLElement;
 
 onMount(async () => {
-  invitationName = await new Promise((resolve) => {
-    resolve('Mr. Albert and Family')
-  })
+  const URLParam = new URLSearchParams(window.location.search);
+  const pass = URLParam.get('pass');
+  invited = await authenticate(pass);
+  if (invited) {
+    const guest = getInvitedGuest();
+    invitationName = guest.name;
+  }
 })
 
 function entranceDone(ev: TransitionEvent) {
@@ -64,6 +70,10 @@ function entranceDone(ev: TransitionEvent) {
             Open Invitation
           </button>
         </div>
+      </div>
+    {:else if invited === false}
+      <div class="absolute top-4 left-0 bg-yellow-300 p-4" transition:fly>
+        Sorry, please contact Kelvin & Rita to get the correct invitation URL
       </div>
     {/if}
   </div>
