@@ -1,35 +1,51 @@
-interface InvitedGuest {
+interface Guest {
   name: string;
   origin: string;
-  category: string
+  category: string;
+  pass: string;
+  testimonial: string;
 }
 
-const SHEET_ID = '1dutko7Ze7UQM-Z_fOQD4LeSSdZRyax5-S3ra2fwiePI';
-const SHEET_TITLE = 'Sheet1';
-const API_KEY = 'AIzaSyCifieZpTZTWaUSrtVUdObnkn7bsGmuOyk';
+let invitationList: Guest[]
+let invitedGuest: Guest
 
-let invitedGuest: InvitedGuest
+async function fetchInvitationList () {
+  const url = `https://sheetdb.io/api/v1/e947nej2tzjmh`
+  invitationList = await window.fetch(url).then(resp => resp.json());
+  return invitationList;
+}
 
 export async function authenticate (password: string): Promise<boolean> {
-  const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_TITLE}?key=${API_KEY}`
-  const resp = await window.fetch(url).then(resp => resp.json());
-  const cells = resp.values as Array<string[]>
-  // Skip the first row as it's the header
-  cells.splice(0, 1)
-  // Find the row that matches the pass
-  const invited = cells.find(invitation => invitation[3] === password)
-  if (invited) {
-    invitedGuest = {
-      name: invited[0],
-      origin: invited[1],
-      category: invited[2]
+  const invitationList = await fetchInvitationList();
+  invitedGuest = undefined
+  invitationList.forEach((guest, idx) => {
+    // Skip first index as it's the header
+    if (idx === 0) {
+      return
     }
+    if (guest.pass === password) {
+      invitedGuest = guest
+    }
+  })
+  if (invitedGuest) {
     return true
   } else {
     return false
   }
 }
 
-export function getInvitedGuest (): InvitedGuest {
+export async function updateResponse (response: 'Yes'|'No'): Promise<boolean> {
+  const url = `https://sheetdb.io/api/v1/58f61be4dda40/pass/${invitedGuest.pass}`;
+  const body = JSON.stringify({
+    data: [{ response }]
+  })
+  return window.fetch(url, { method: 'PUT', body }).then(() => true)
+}
+
+export function getInvitedGuest (): Guest {
+  return invitedGuest;
+}
+
+export function getInvitationList (): Guest {
   return invitedGuest;
 }
