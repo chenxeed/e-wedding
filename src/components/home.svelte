@@ -24,9 +24,12 @@ import photo2 from '../assets/photo-2.jpg';
   </p>
   <p
     class="relative z-10 text-xl font-extrabold px-4 self-start lg:self-center lg:text-center bg-gray-50 bg-opacity-50 p-4 mt-16 lg:mt-0"
-    transition:slide="{{ duration: 2000, delay: 5000 }}">Sunday, 12th Sept '21, 7 - 9PM
+    transition:slide="{{ duration: 2000, delay: 5000 }}">Saturday, 29th Jan' 2022, 18.00 - 20.00
     <br/>
-    <span class="text-lg">Jl. Martha Tilaar Block 69, Jakarta Pusat</span>
+    <a href="https://www.google.com/maps?ll=-6.18038,106.724483&z=14&t=m&hl=en&gl=ID&mapclient=embed&cid=9664184628718228892" target="_blank">
+      <span class="text-lg">Harris Hotel Puri Mansion</span><br>
+      <span class="text-sm">Jl. Lingkar Luar Puri Mansion Estate Kembangan, Cengkareng, Duri Kosambi, Jakarta, Indonesia</span>
+    </a>
   </p>
   <p
     class="relative z-10 text-base italic text-right self-start lg:self-center bg-gray-50 bg-opacity-50 p-4 mt-10 lg:mt-0"
