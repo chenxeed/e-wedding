@@ -1,16 +1,21 @@
+import axios from 'axios';
+
 interface Guest {
   name: string;
   origin: string;
   category: string;
   pass: string;
+  response: string;
   testimonial: string;
 }
 
 let invitationList: Guest[]
 let invitedGuest: Guest
 
+const SHEETDB_API = 'https://sheetdb.io/api/v1/e947nej2tzjmh'
+
 async function fetchInvitationList () {
-  const url = `https://sheetdb.io/api/v1/e947nej2tzjmh`
+  const url = SHEETDB_API
   invitationList = await window.fetch(url).then(resp => resp.json());
   return invitationList;
 }
@@ -18,11 +23,7 @@ async function fetchInvitationList () {
 export async function authenticate (password: string): Promise<boolean> {
   const invitationList = await fetchInvitationList();
   invitedGuest = undefined
-  invitationList.forEach((guest, idx) => {
-    // Skip first index as it's the header
-    if (idx === 0) {
-      return
-    }
+  invitationList.forEach((guest) => {
     if (guest.pass === password) {
       invitedGuest = guest
     }
@@ -35,17 +36,21 @@ export async function authenticate (password: string): Promise<boolean> {
 }
 
 export async function updateResponse (response: 'Yes'|'No'): Promise<boolean> {
-  const url = `https://sheetdb.io/api/v1/58f61be4dda40/pass/${invitedGuest.pass}`;
-  const body = JSON.stringify({
-    data: [{ response }]
-  })
-  return window.fetch(url, { method: 'PUT', body }).then(() => true)
+  const url = `${SHEETDB_API}/pass/${invitedGuest.pass}`;
+  const body = { data: { response }}
+  return axios.patch(url, body).then(() => true)
+}
+
+export async function updateTestimonial (testimonial: string): Promise<boolean> {
+  const url = `${SHEETDB_API}/pass/${invitedGuest.pass}`;
+  const body = { data: { testimonial }}
+  return axios.patch(url, body).then(() => true)
 }
 
 export function getInvitedGuest (): Guest {
   return invitedGuest;
 }
 
-export function getInvitationList (): Guest {
-  return invitedGuest;
+export function getInvitationList (): Guest[] {
+  return invitationList;
 }

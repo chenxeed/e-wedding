@@ -36,6 +36,7 @@
   },
   "type": "module",
   "dependencies": {
+    "axios": "^0.24.0",
     "canvas-confetti": "^1.4.0"
   }
 }
