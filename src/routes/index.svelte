@@ -54,7 +54,7 @@ function runConfetti () {
 }
 
 </script>
-<div class="ff-amatic text-xl">
+<div class="ff-oswald text-xl">
   {#if showEntrance}
     <section>
       <Entrance on:done={() => showEntrance = false}/>
@@ -108,13 +108,13 @@ function runConfetti () {
   font-display: block;
 }
 @font-face {
-  font-family: "Amatic SC";
-  src: url("/fonts/AmaticSC-Regular.ttf");
+  font-family: "Oswald";
+  src: url("/fonts/Oswald-Regular.ttf");
   font-display: block;
 }
 @font-face {
-  font-family: "Amatic SC";
-  src: url("/fonts/AmaticSC-Bold.ttf");
+  font-family: "Oswald";
+  src: url("/fonts/Oswald-Bold.ttf");
   font-weight: bold;
   font-display: block;
 }
@@ -129,8 +129,8 @@ function runConfetti () {
       font-family: 'Parisienne', cursive;
     }
 
-    .ff-amatic {
-      font-family: 'Amatic SC', cursive;
+    .ff-oswald {
+      font-family: 'Oswald', cursive;
     }
 
     .text-shadow {
@@ -153,6 +153,7 @@ function runConfetti () {
 
 html {
   scroll-behavior: smooth;
+  height: -webkit-fill-available;
 }
 
 nav {
@@ -164,7 +165,7 @@ nav {
 }
 
 .page-min-height {
-  min-height: calc(100vh - 70px);
+  min-height: calc(95vh - 70px);
 }
 
 </style>

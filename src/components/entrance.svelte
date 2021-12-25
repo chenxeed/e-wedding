@@ -33,7 +33,7 @@ function entranceDone(ev: TransitionEvent) {
 }
 
 </script>
-<div class="entrance h-screen flex items-center" class:open>
+<div class="entrance flex items-center" class:open>
   <div
     bind:this={entrance}
     class="entrance-container"
@@ -41,10 +41,10 @@ function entranceDone(ev: TransitionEvent) {
     <img src={flowerFrameTop} alt="flower-frame-top" class="absolute top-0 right-0"/>
     <img src={flowerFrameBottom} alt="flower-frame-bottom" class="absolute bottom-0 left-0"/>
     <div class="p-8 h-full w-3/4">
-      <img src={kelvinRitaEntrance} alt="flower-frame-bottom" class="h-full object-cover object-center"/>
+      <img src={kelvinRitaEntrance} alt="flower-frame-bottom" class="h-full object-cover" style="object-position: 65% 0"/>
     </div>
     {#if invitationName}
-      <div class="absolute top-4 left-0 bg-yellow-300 p-4" transition:fly>
+      <div class="absolute top-4 left-0 bg-yellow-300 p-4 transition-all" transition:fly>
         <p>Special Invitation for</p>
         <p class="text-2xl font-bold">{ invitationName }</p>
       </div>
@@ -52,7 +52,7 @@ function entranceDone(ev: TransitionEvent) {
         <div
           class="mt-56 flex justify-end"
           in:fly={{ duration: 2000, delay: 2000 }}>
-          <img src={saveTheDate} alt="save the date" class="w-28">
+          <img src={saveTheDate} alt="save the date" class="w-28 h-28">
         </div>
         <p class="mt-5 text-right" in:fly={{ duration: 2000, delay: 2000 }}>for the wedding of</p>
         <p class="mt-5 text-right" in:fly={{ duration: 2000, delay: 3000 }}>
@@ -84,6 +84,12 @@ function entranceDone(ev: TransitionEvent) {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.entrance {
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
 
 .entrance-container {
   @apply relative items-center h-screen max-w-xl m-auto sm:border-2 sm:border-yellow-300 lg:h-[700px] lg:rounded-tr-3xl lg:rounded-bl-3xl;

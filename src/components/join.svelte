@@ -37,7 +37,7 @@ function encodeHTML(s) {
 <div
   use:viewport
   on:enterViewport={() => showQuestion = guest.response === ""}
-  class="page-min-height flex flex-col items-center justify-evenly px-2 bg-yellow-50">
+  class="page-min-height flex flex-col items-center justify-evenly px-2 bg-yellow-100">
   {#if showQuestion}
     <p
       class="text-4xl font-semibold text-center ff-parisienne"
@@ -64,7 +64,7 @@ function encodeHTML(s) {
     {#if showTestimonialForm}
     <p
       in:fade="{{ duration: 2000, delay: 1000 }}" out:fade
-      class="text-lg font-semibold text-center ff-amatic">
+      class="text-lg font-semibold text-center ff-oswald">
       You can send a message to wish Kelvin & Rita:
     </p>
     <textarea
@@ -81,7 +81,7 @@ function encodeHTML(s) {
       class="relative z-10 text-4xl font-extrabold text-center ff-parisienne text-yellow-600">
       Testimonial
     </p>
-    <div class="ff-amatic overflow-auto w-full" style={ `height: ${showTestimonialForm ? '200px' : '70vh'}` }>
+    <div class="ff-oswald overflow-auto w-full" style={ `height: ${showTestimonialForm ? '200px' : '70vh'}` }>
       {#each testimonials as testi}
         <p class="border-b-2">
           <span class="font-bold">{ testi.name }</span>:<br>
