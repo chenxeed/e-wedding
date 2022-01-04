@@ -4,6 +4,7 @@ import confetti from 'canvas-confetti';
 import Entrance from '../components/entrance.svelte'
 import Home from '../components/home.svelte'
 import Story from '../components/story.svelte'
+import Gallery from '../components/gallery.svelte'
 import Join from '../components/join.svelte'
 
 let showEntrance = true
@@ -71,24 +72,36 @@ function runConfetti () {
             <div id="story">
               <Story/>
             </div>
+            <div id="gallery">
+              <Gallery/>
+            </div>
             <div id="join">
               <Join/>
             </div>
           </div>
         </main>
-        <nav class="flex-grow-0 flex justify-around items-center border-t-2 border-gray-700 fixed bottom-0 w-full bg-red-50">
+        <nav class="flex-grow-0 flex justify-around items-center border-t-1 border-yellow-500 fixed bottom-0 w-full bg-gradient-to-b from-yellow-300 to-yellow-100">
           <a class="flex flex-col items-center" href="#home" on:click|preventDefault={() => scrollTo('home')}>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
             </svg>
             Home
           </a>
+          <div class="border-l-2 border-gray-500 w-1 h-full"></div>
           <a class="flex flex-col items-center" href="#story" on:click|preventDefault={() => scrollTo('story')}>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
             </svg>
-            Our Story
+            Story
           </a>
+          <div class="border-l-2 border-gray-500 w-1 h-full"></div>
+          <a class="flex flex-col items-center" href="#gallery" on:click|preventDefault={() => scrollTo('gallery')}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection-play-fill" viewBox="0 0 16 16">
+              <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm6.258-6.437a.5.5 0 0 1 .507.013l4 2.5a.5.5 0 0 1 0 .848l-4 2.5A.5.5 0 0 1 6 12V7a.5.5 0 0 1 .258-.437z"/>
+            </svg>
+            Gallery
+          </a>
+          <div class="border-l-2 border-gray-500 w-1 h-full"></div>
           <a class="flex flex-col items-center" href="#join" on:click|preventDefault={() => scrollTo('join')}>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
