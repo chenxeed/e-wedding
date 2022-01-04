@@ -26,13 +26,13 @@ function encodeHTML(s) {
 <div
   class="page-min-height flex flex-col items-center justify-evenly px-2 bg-yellow-100">
   <a href="https://forms.gle/K9f4uH3mMPLmiLZc6" target="_blank">
-    <img src={ rsvp } alt="rsvp" class="w-32"/>
+    <img src={ rsvp } alt="rsvp" class="w-64"/>
   </a>
   {#if showTestimonialForm}
   <p
     in:fade="{{ duration: 2000, delay: 1000 }}" out:fade
     class="text-lg font-semibold text-center ff-oswald">
-    You can send a message to wish Kelvin & Rita:
+    You can write a testimonial to wish Kelvin & Rita:
   </p>
   <textarea
     in:fade="{{ duration: 2000, delay: 1000 }}" out:fade

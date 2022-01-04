@@ -55,7 +55,7 @@ function entranceDone(ev: TransitionEvent) {
           <img src={saveTheDate} alt="save the date" class="w-28 h-28">
         </div>
         <p class="mt-5 text-right" in:fly={{ duration: 2000, delay: 2000 }}>for the wedding of</p>
-        <p class="mt-5 text-right" in:fly={{ duration: 2000, delay: 3000 }}>
+        <p class="mt-5 text-right ff-parisienne" in:fly={{ duration: 2000, delay: 3000 }}>
           <span class="text-4xl text-yellow-700">Kelvin</span>
           <br/>
           <span class="text-2xl">&</span>
@@ -92,7 +92,7 @@ function entranceDone(ev: TransitionEvent) {
 }
 
 .entrance-container {
-  @apply relative items-center h-screen max-w-xl m-auto sm:border-2 sm:border-yellow-300 lg:h-[700px] lg:rounded-tr-3xl lg:rounded-bl-3xl;
+  @apply relative items-center h-screen max-w-xl m-auto sm:border-2 sm:border-yellow-300 lg:h-[700px] lg:rounded-tr-3xl lg:rounded-bl-3xl lg:mt-20;
 }
 
 /* OPEN ANIMATION */

@@ -33,7 +33,7 @@ function onWindowResized () {
 }
 
 </script>
-<div class="page-min-height flex flex-col px-2 bg-yellow-50">
+<div class="pb-24 flex flex-col px-2 bg-yellow-50">
   <div
     use:viewport
     on:enterViewport={() => showTitle = true}
