@@ -36,8 +36,14 @@ function blurSelf(e: MouseEvent) {
     {#if showTitle}
       <p
         transition:fade="{{ duration: 2000, delay: 1000 }}"
-        class="text-center font-semibold text-4xl mt-10 ff-parisienne">Our Story</p>
-      <div class="flex w-full mt-10" transition:fade="{{ duration: 2000, delay: 1000 }}">
+        class="text-center font-semibold text-2xl mt-10 ff-parisienne">This is the beginning of</p>
+      <p
+        transition:fade="{{ duration: 2000, delay: 1000 }}"
+        class="text-center font-semibold text-4xl ff-parisienne">Our Story</p>
+      <p class="w-full mt-10 text-center" transition:fade="{{ duration: 2000, delay: 1000 }}">
+        Days before met, Kelvin spent his childhood in Karawang while Rita spent hers in Lampung 👦👧
+      </p>
+      <div class="flex w-full mt-10" transition:fade="{{ duration: 2000, delay: 2000 }}">
         <div class="flex-grow w-full">
           <div class="relative max-w-xs h-40 m-auto">
             <div class="transition-all absolute top-16 transform -rotate-12 skew-y-6 overflow-hidden w-20 h-20 border-4 border-white focus:w-40 focus:h-40 focus:-top-10 focus:z-10 cursor-pointer photo-shadow" tabindex="0" on:mousedown={blurSelf}>
@@ -65,11 +71,8 @@ function blurSelf(e: MouseEvent) {
           </div>
         </div>
       </div>
-      <p class="w-full mt-10 text-center" transition:fade="{{ duration: 2000, delay: 2000 }}">
-        Hari-hari sebelum bertemu, Kelvin dan Rita menjalani masa kecil dan remajanya hingga bertumbuh dewasa 👦👧
-      </p>
       <p class="w-full mt-5 text-center" transition:fade="{{ duration: 2000, delay: 4000 }}">
-        Hingga suatu hari mereka dipertemukan di tempat kerja mereka... 👨‍💼👩‍💼
+        One day, They met together at the office and fell in love... 👨‍💼👩‍💼
       </p>
       <div class="w-full mt-5" transition:fade="{{ duration: 2000, delay: 4000 }}">
         <div class="m-auto transition-all transform -rotate-6 overflow-hidden w-60 h-40 border-4 border-white focus:scale-125 focus:rotate-12 cursor-pointer photo-shadow" tabindex="0" on:mousedown={blurSelf}>
@@ -77,7 +80,7 @@ function blurSelf(e: MouseEvent) {
         </div>
       </div>
       <p class="w-full mt-10 text-center" transition:fade="{{ duration: 2000, delay: 6000 }}">
-        Menikmati waktu kencan bersama 💑
+        Have a dating time and knowing each other..  💑
       </p>
       <div class="w-full mt-5" transition:fade="{{ duration: 2000, delay: 6000 }}">
         <div class="relative max-w-xs h-60 m-auto">
@@ -93,7 +96,7 @@ function blurSelf(e: MouseEvent) {
         </div>
       </div>
       <p class="w-full mt-10 text-center" transition:fade="{{ duration: 2000, delay: 8000 }}">
-        Dan dihari kejutan itu, she says "Yes!" 💍
+        And this is it. Their journey begin 💍
       </p>
       <div class="w-full mt-5" transition:fade="{{ duration: 2000, delay: 8000 }}">
         <div class="relative max-w-xs h-80 m-auto">
