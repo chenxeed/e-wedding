@@ -17,7 +17,6 @@ let invited = true
 let open = false
 let entrance: HTMLElement;
 
-let audio;
 
 onMount(async () => {
   const URLParam = new URLSearchParams(window.location.search);
@@ -27,8 +26,6 @@ onMount(async () => {
     const guest = getInvitedGuest();
     invitationName = guest.name;
   }
-  audio = new Audio(song);
-  audio.loop = true
 })
 
 function entranceDone(ev: TransitionEvent) {
@@ -39,7 +36,6 @@ function entranceDone(ev: TransitionEvent) {
 
 function openInvitation () {
   open = true
-  audio.play()
 }
 
 </script>

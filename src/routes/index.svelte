@@ -7,8 +7,12 @@ import Story from '../components/story.svelte'
 import Gallery from '../components/gallery.svelte'
 import Join from '../components/join.svelte'
 import Gift from '../components/gift.svelte'
+import song from '../../static/its-you-cut.mp3';
+import { onMount } from 'svelte';
 
 let showEntrance = true
+let audio: HTMLAudioElement;
+let muted = false
 
 function scrollTo (targetId: string) {
   const target = document.getElementById(targetId)
@@ -60,11 +64,32 @@ function runConfetti () {
   }());
 }
 
+function entranceDone () {
+  showEntrance = false
+  audio.volume = 0.5
+  audio.play()
+}
+
+function toggleMusic () {
+  if (audio.volume === 0.5) {
+    audio.volume = 0
+    muted = true
+  } else {
+    audio.volume = 0.5
+    muted = false
+  }
+}
+
+onMount(() => {
+  audio = new Audio(song);
+  audio.loop = true
+})
+
 </script>
 <div class="ff-body text-xl">
   {#if showEntrance}
     <section>
-      <Entrance on:done={() => showEntrance = false}/>
+      <Entrance on:done={ entranceDone }/>
     </section>
   {:else}
     <div in:fade
@@ -129,6 +154,16 @@ function runConfetti () {
         </nav>
       </div>
     </div>
+    <button
+      class="fixed bottom-[80px] right-2 bg-blue-200 hover:bg-blue-100 text-gray-800 py-2 px-4 rounded inline-flex items-center"
+      style={ muted && 'color: #fff; background: rgb(55, 65, 81)' }
+      on:click={ toggleMusic }>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-music-note-beamed" viewBox="0 0 16 16">
+        <path d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13c0-1.104 1.12-2 2.5-2s2.5.896 2.5 2zm9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2z"/>
+        <path fill-rule="evenodd" d="M14 11V2h1v9h-1zM6 3v10H5V3h1z"/>
+        <path d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4V2.905z"/>
+      </svg>
+    </button>
   {/if}
 </div>
 <style global lang="postcss">
