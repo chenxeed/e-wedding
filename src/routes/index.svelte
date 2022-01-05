@@ -6,6 +6,7 @@ import Home from '../components/home.svelte'
 import Story from '../components/story.svelte'
 import Gallery from '../components/gallery.svelte'
 import Join from '../components/join.svelte'
+import Gift from '../components/gift.svelte'
 
 let showEntrance = true
 
@@ -83,6 +84,10 @@ function runConfetti () {
             <div id="join">
               <Join/>
             </div>
+            <div id="gift">
+              <Gift/>
+            </div>
+            <div class="h-[70px]"/>
           </div>
         </main>
         <nav class="flex-grow-0 flex justify-around items-center border-t-2 border-gray-500 fixed bottom-0 w-full text-yellow-200 bg-gray-600 bg-opacity-90">
@@ -113,6 +118,13 @@ function runConfetti () {
               <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
             </svg>
             RSVP
+          </a>
+          <div class="border-l-2 border-gray-500 w-1 h-full"></div>
+          <a class="flex flex-col items-center" href="#join" on:click|preventDefault={() => scrollTo('gift')}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gift-fill" viewBox="0 0 16 16">
+              <path d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zm6 4v7.5a1.5 1.5 0 0 1-1.5 1.5H9V7h6zM2.5 16A1.5 1.5 0 0 1 1 14.5V7h6v9H2.5z"/>
+            </svg>
+            Gift
           </a>
         </nav>
       </div>
