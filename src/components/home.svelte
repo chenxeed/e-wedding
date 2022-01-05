@@ -1,7 +1,10 @@
 <script lang="ts">
 import { slide, fade } from 'svelte/transition';
+import { getInvitedGuest } from '../module/sheet';
 import photo1 from '../assets/photo-1.jpg';
 import photo2 from '../assets/photo-2.jpg';
+
+const guest = getInvitedGuest();
 
 </script>
 <div
@@ -22,15 +25,25 @@ import photo2 from '../assets/photo-2.jpg';
     transition:slide="{{ duration: 2000, delay: 3000 }}">
       Kelvin & Rita
   </p>
-  <p
-    class="relative z-10 text-xl font-extrabold px-4 self-start lg:self-center lg:text-center bg-gray-50 bg-opacity-50 p-4 mt-16 lg:mt-0"
-    transition:slide="{{ duration: 2000, delay: 5000 }}">Saturday, 29th Jan' 2022, 18.00 - 20.00
-    <br/>
-    <a href="https://www.google.com/maps?ll=-6.18038,106.724483&z=14&t=m&hl=en&gl=ID&mapclient=embed&cid=9664184628718228892" target="_blank">
-      <span class="text-lg">Harris Hotel Puri Mansion</span><br>
-      <span class="text-sm">Jl. Lingkar Luar Puri Mansion Estate Kembangan, Cengkareng, Duri Kosambi, Jakarta, Indonesia</span>
-    </a>
-  </p>
+    <p
+      class="relative z-10 text-xl font-extrabold px-4 self-start lg:self-center lg:text-center bg-gray-50 bg-opacity-50 p-4 mt-16 lg:mt-0"
+      transition:slide="{{ duration: 2000, delay: 5000 }}">
+      {#if guest.category !== 'online'}
+        Saturday, 29th Jan' 2022,<br>18.00 - 20.00
+        <br/>
+        <a href="https://www.google.com/maps?ll=-6.18038,106.724483&z=14&t=m&hl=en&gl=ID&mapclient=embed&cid=9664184628718228892" target="_blank">
+          <span class="text-lg">Harris Hotel Puri Mansion</span><br>
+          <span class="text-sm">Jl. Lingkar Luar Puri Mansion Estate Kembangan, Cengkareng, Duri Kosambi, Jakarta, Indonesia</span>
+        </a>
+      {:else}
+        Saturday, 29th Jan' 2022,<br>10.30 - 12.00
+        <br/>
+        <a class="text-blue-900" href="https://www.instagram.com/italovestoryofkev/" target="_blank">
+          <span class="text-lg">Instagram Live</span><br>
+          <span class="text-sm">#italovestoryofkev</span>
+        </a>
+      {/if}
+    </p>
   <p
     class="relative z-10 text-base italic text-right self-start lg:self-center bg-gray-50 bg-opacity-50 p-4 mt-10 lg:mt-0"
     transition:slide="{{ duration: 2000, delay: 7000 }}">
