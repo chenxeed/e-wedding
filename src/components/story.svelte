@@ -36,10 +36,10 @@ function blurSelf(e: MouseEvent) {
     {#if showTitle}
       <p
         transition:fade="{{ duration: 2000, delay: 1000 }}"
-        class="text-center font-semibold text-2xl mt-10 ff-parisienne">This is the beginning of</p>
+        class="text-center font-semibold text-2xl mt-10 ff-main">This is the beginning of</p>
       <p
         transition:fade="{{ duration: 2000, delay: 1000 }}"
-        class="text-center font-semibold text-4xl ff-parisienne">Our Story</p>
+        class="text-center font-semibold text-4xl ff-main">Our Story</p>
       <p class="w-full mt-10 text-center" transition:fade="{{ duration: 2000, delay: 1000 }}">
         Days before met, Kelvin spent his childhood in Karawang while Rita spent hers in Lampung 👦👧
       </p>

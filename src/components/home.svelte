@@ -7,6 +7,7 @@ import photo2 from '../assets/photo-2.jpg';
 const guest = getInvitedGuest();
 
 </script>
+
 <div
   class="relative page-min-height flex flex-col max-w-lg m-auto lg:max-w-none overflow-hidden lg:justify-evenly">
   <div
@@ -21,7 +22,7 @@ const guest = getInvitedGuest();
     class="relative z-10 text-lg font-semibold text-center text-shadow mt-8 lg:mt-0"
     transition:slide="{{ duration: 2000, delay: 1000 }}">You are cordially invited to attend the wedding of</p>
   <p
-    class="relative z-10 text-4xl font-extrabold text-center ff-parisienne mt-12 lg:mt-0 text-yellow-600"
+    class="relative z-10 text-4xl font-extrabold text-center ff-main mt-12 lg:mt-0 text-yellow-600"
     transition:slide="{{ duration: 2000, delay: 3000 }}">
       Kelvin & Rita
   </p>

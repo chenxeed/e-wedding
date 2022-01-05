@@ -47,7 +47,7 @@ function encodeHTML(s) {
   {#if showTestimonialForm}
   <p
     in:fade="{{ duration: 2000, delay: 1000 }}" out:fade
-    class="text-lg font-semibold text-center ff-specialelite">
+    class="text-lg font-semibold text-center ff-body">
     You can write a testimonial to wish Kelvin & Rita:
   </p>
   <textarea
@@ -61,10 +61,10 @@ function encodeHTML(s) {
   {/if}
   <p
     in:fade="{{ duration: 2000, delay: 1000 }}" out:fade
-    class="relative z-10 text-4xl font-extrabold text-center ff-parisienne text-yellow-600">
+    class="relative z-10 text-4xl font-extrabold text-center ff-main text-yellow-600">
     Testimonial
   </p>
-  <div class="ff-specialelite overflow-auto w-full mb-10">
+  <div class="ff-body overflow-auto w-full mb-10">
     {#each testimonialPagination as testi}
       <p class="border-2 bg-gray-100 p-2">
         <span class="text-base">{ testi.name }</span><br>

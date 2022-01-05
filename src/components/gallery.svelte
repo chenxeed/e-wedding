@@ -41,7 +41,7 @@ function onWindowResized () {
     {#if showTitle}
       <p
         transition:fade="{{ duration: 2000, delay: 1000 }}"
-        class="text-center font-semibold text-4xl mt-10 ff-parisienne">Gallery</p>
+        class="text-center font-semibold text-4xl mt-10 ff-main">Gallery</p>
       <div class="mt-10 md:w-[768px] mx-auto">
         <Gallery gap={10} maxColumnWidth={galleryMaxColumnWidth}>
           {#each images as image, i}

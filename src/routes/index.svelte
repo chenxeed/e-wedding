@@ -61,7 +61,7 @@ function runConfetti () {
 }
 
 </script>
-<div class="ff-specialelite text-xl">
+<div class="ff-body text-xl">
   {#if showEntrance}
     <section>
       <Entrance on:done={() => showEntrance = false}/>
@@ -133,13 +133,19 @@ function runConfetti () {
 </div>
 <style global lang="postcss">
 @font-face {
-  font-family: "Parisienne";
+  font-family: "Main";
   src: url("/fonts/Parisienne-Regular.ttf");
   font-display: block;
 }
+
 @font-face {
-  font-family: "SpecialElite";
-  src: url("/fonts/SpecialElite-Regular.ttf");
+  font-family: "Body";
+  src: url("/fonts/JosefinSlab-Regular.ttf");
+  font-display: block;
+}
+@font-face {
+  font-family: "Body";
+  src: url("/fonts/JosefinSlab-Bold.ttf");
   font-weight: bold;
   font-display: block;
 }
@@ -150,12 +156,12 @@ function runConfetti () {
 
 @layer utilities {
   @responsive {
-    .ff-parisienne {
-      font-family: 'Parisienne', cursive;
+    .ff-main {
+      font-family: 'Main', cursive;
     }
 
-    .ff-specialelite {
-      font-family: 'SpecialElite', cursive;
+    .ff-body {
+      font-family: 'Body', cursive;
     }
 
     .text-shadow {

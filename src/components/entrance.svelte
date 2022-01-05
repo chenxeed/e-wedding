@@ -7,6 +7,7 @@ import flowerFrameBottom from '../assets/flower-frame-bottom.png';
 import kelvinRitaEntrance from '../assets/kelvin-rita-entrance.jpg';
 import saveTheDate from '../assets/save-the-date.png';
 import { authenticate, getInvitedGuest } from '../module/sheet';
+import song from '../../static/its-you-cut.mp3';
 
 const dispatch = createEventDispatcher();
 
@@ -16,6 +17,8 @@ let invited = true
 let open = false
 let entrance: HTMLElement;
 
+let audio;
+
 onMount(async () => {
   const URLParam = new URLSearchParams(window.location.search);
   const pass = URLParam.get('pass');
@@ -24,12 +27,19 @@ onMount(async () => {
     const guest = getInvitedGuest();
     invitationName = guest.name;
   }
+  audio = new Audio(song);
+  audio.loop = true
 })
 
 function entranceDone(ev: TransitionEvent) {
   if (ev.target === entrance) {
     dispatch('done')
   }
+}
+
+function openInvitation () {
+  open = true
+  audio.play()
 }
 
 </script>
@@ -55,7 +65,7 @@ function entranceDone(ev: TransitionEvent) {
           <img src={saveTheDate} alt="save the date" class="w-28 h-28">
         </div>
         <p class="mt-5 text-right" in:fly={{ duration: 2000, delay: 2000 }}>for the wedding of</p>
-        <p class="mt-5 text-right ff-parisienne" in:fly={{ duration: 2000, delay: 3000 }}>
+        <p class="mt-5 text-right ff-main" in:fly={{ duration: 2000, delay: 3000 }}>
           <span class="text-4xl text-yellow-700">Kelvin</span>
           <br/>
           <span class="text-2xl">&</span>
@@ -65,7 +75,7 @@ function entranceDone(ev: TransitionEvent) {
         <div class="mt-5">
           <button
             class="bg-yellow-600 hover:bg-yellow-400 text-white font-bold py-2 px-4 border-b-4 border-yellow-700 hover:border-yellow-500 rounded w-full transition-all animate-pulse"
-            on:click={ () => open = true }
+            on:click={ openInvitation }
             in:fly={{ duration: 2000, delay: 4000 }}>
             Open Invitation
           </button>
