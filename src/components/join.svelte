@@ -24,14 +24,14 @@ function encodeHTML(s) {
 
 </script>
 <div
-  class="page-min-height flex flex-col items-center justify-evenly px-2 bg-yellow-100">
+  class="page-min-height flex flex-col items-center justify-evenly px-2 bg-yellow-100 md:w-[768px] mx-auto">
   <a href="https://forms.gle/K9f4uH3mMPLmiLZc6" target="_blank">
-    <img src={ rsvp } alt="rsvp" class="w-64"/>
+    <img src={ rsvp } alt="rsvp" class="w-64 my-10 motion-reduce:animate-bounce"/>
   </a>
   {#if showTestimonialForm}
   <p
     in:fade="{{ duration: 2000, delay: 1000 }}" out:fade
-    class="text-lg font-semibold text-center ff-oswald">
+    class="text-lg font-semibold text-center ff-specialelite">
     You can write a testimonial to wish Kelvin & Rita:
   </p>
   <textarea
@@ -40,7 +40,7 @@ function encodeHTML(s) {
     style="height: 200px;" class="shadow-sm mt-1 p-2 block w-full sm:text-sm border-gray-600 rounded-md"></textarea>
     <button
       in:fade="{{ duration: 2000, delay: 1000 }}" out:fade
-      class="bg-yellow-600 hover:bg-yellow-400 text-white text-xs font-bold py-2 px-4 border-b-4 border-yellow-700 hover:border-yellow-500 rounded"
+      class="bg-yellow-600 hover:bg-yellow-400 text-white text-xs font-bold py-2 px-4 my-4 border-b-4 border-yellow-700 hover:border-yellow-500 rounded"
       on:click={ onSubmitTestimonial }>Send</button>
   {/if}
   <p
@@ -48,11 +48,11 @@ function encodeHTML(s) {
     class="relative z-10 text-4xl font-extrabold text-center ff-parisienne text-yellow-600">
     Testimonial
   </p>
-  <div class="ff-oswald overflow-auto w-full" style={ `height: ${showTestimonialForm ? '200px' : '70vh'}` }>
+  <div class="ff-specialelite overflow-auto w-full" style={ `height: ${showTestimonialForm ? '200px' : '70vh'}` }>
     {#each testimonials as testi}
-      <p class="border-b-2">
-        <span class="font-bold">{ testi.name }</span>:<br>
-        <span>"{@html testi.testimonial.replace(/(?:\r\n|\r|\n)/g, '<br>') }"</span>
+      <p class="border-2 bg-gray-100 p-2">
+        <span class="text-base">{ testi.name }</span><br>
+        <span class="text-sm">"{@html testi.testimonial.replace(/(?:\r\n|\r|\n)/g, '<br>') }"</span>
       </p>
     {/each}
   </div>
