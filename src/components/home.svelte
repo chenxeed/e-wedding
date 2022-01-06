@@ -30,7 +30,7 @@ const guest = getInvitedGuest();
       class="relative z-10 text-xl px-4 self-start lg:self-center lg:text-center bg-gray-50 bg-opacity-50 p-4 mt-16 lg:mt-0 w-56 lg:w-auto"
       transition:slide="{{ duration: 2000, delay: 5000 }}">
       {#if guest.category !== 'online'}
-        Saturday, 29th Jan' 2022,<br>18.00 - 20.00
+        Saturday, 29 Jan 22,<br>18.00 - 20.00
         <br/>
         <a href="https://www.google.com/maps?ll=-6.18038,106.724483&z=14&t=m&hl=en&gl=ID&mapclient=embed&cid=9664184628718228892" target="_blank">
           <span class="text-lg">Harris Hotel Puri Mansion</span><br>
@@ -52,9 +52,3 @@ const guest = getInvitedGuest();
     <br>- John Clarke
   </p>
 </div>
-<style lang="postcss">
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-</style>
