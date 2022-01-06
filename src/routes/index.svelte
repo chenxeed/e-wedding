@@ -8,10 +8,15 @@ import Gallery from '../components/gallery.svelte'
 import Join from '../components/join.svelte'
 import Gift from '../components/gift.svelte'
 import song from '../../static/its-you-cut.mp3';
-import { onMount } from 'svelte';
+import { Howl } from 'howler';
 
 let showEntrance = true
-let audio: HTMLAudioElement;
+const audio = new Howl({
+  src: [song],
+  html5: true,
+  volume: 0.5,
+  loop: true
+});
 let muted = false
 
 function scrollTo (targetId: string) {
@@ -66,24 +71,18 @@ function runConfetti () {
 
 function entranceDone () {
   showEntrance = false
-  audio.volume = 0.5
   audio.play()
 }
 
 function toggleMusic () {
-  if (audio.volume === 0.5) {
-    audio.volume = 0
+  if (muted === false) {
+    audio.fade(.5, 0, 1000);
     muted = true
   } else {
-    audio.volume = 0.5
+    audio.fade(0, .5, 1000);
     muted = false
   }
 }
-
-onMount(() => {
-  audio = new Audio(song);
-  audio.loop = true
-})
 
 </script>
 <div class="ff-body text-xl">
