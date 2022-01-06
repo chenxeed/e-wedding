@@ -19,15 +19,15 @@ const guest = getInvitedGuest();
     class="hidden absolute z-0 w-full h-full shadow-2xl bg-no-repeat bg-left-top bg-auto sm:w-[600px] sm:self-end lg:block"
     style="background-image: url('{photo2}'); transform: scaleX(-1)"/>
   <p
-    class="relative z-10 text-lg font-semibold text-center text-shadow mt-8 lg:mt-0"
+    class="relative z-10 text-md text-center text-shadow mt-8 lg:mt-0"
     transition:slide="{{ duration: 2000, delay: 1000 }}">You are cordially invited to attend the wedding of</p>
   <p
-    class="relative z-10 text-5xl font-extrabold text-center ff-main mt-12 lg:mt-0 text-yellow-600"
+    class="relative z-10 text-5xl text-center ff-main mt-12 lg:mt-0 text-yellow-600"
     transition:slide="{{ duration: 2000, delay: 3000 }}">
       Kelvin and Rita
   </p>
     <p
-      class="relative z-10 text-xl font-extrabold px-4 self-start lg:self-center lg:text-center bg-gray-50 bg-opacity-50 p-4 mt-16 lg:mt-0"
+      class="relative z-10 text-xl px-4 self-start lg:self-center lg:text-center bg-gray-50 bg-opacity-50 p-4 mt-16 lg:mt-0 w-56 lg:w-auto"
       transition:slide="{{ duration: 2000, delay: 5000 }}">
       {#if guest.category !== 'online'}
         Saturday, 29th Jan' 2022,<br>18.00 - 20.00

@@ -181,6 +181,7 @@ function toggleMusic () {
   font-family: "Body";
   src: url("/fonts/Raleway-ExtraLight.ttf");
   font-display: block;
+  font-weight: 300;
 }
 @font-face {
   font-family: "Body";
@@ -201,6 +202,7 @@ function toggleMusic () {
 
     .ff-body {
       font-family: 'Body', cursive;
+      font-weight: 300;
     }
 
     .text-shadow {
