@@ -13,7 +13,7 @@ let showGift = false
   </p>
   <div>
     <button
-      class="bg-yellow-600 hover:bg-yellow-400 text-white text-xs font-bold py-2 px-4 my-4 border-b-4 border-yellow-700 hover:border-yellow-500 rounded"
+      class="bg-yellow-600 hover:bg-yellow-400 text-white font-bold py-2 px-4 my-4 border-b-4 border-yellow-700 hover:border-yellow-500 rounded w-64 h-24 text-lg animate-pulse"
       style={ showGift && `transition: all 0.5s; height: 0; margin: 0; padding: 0; opacity: 0;` }
       on:click={ () => showGift = true }>Send Gift</button>
   </div>
