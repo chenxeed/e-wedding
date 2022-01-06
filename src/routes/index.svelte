@@ -71,6 +71,7 @@ function runConfetti () {
 
 function entranceDone () {
   showEntrance = false
+  audio.pause()
   audio.play()
 }
 
@@ -110,6 +111,10 @@ function toggleMusic () {
             </div>
             <div id="gift">
               <Gift/>
+            </div>
+            <div class="w-full h-10 text-center text-xs text-yellow-200 bg-gray-600">
+              Copyright @ <a href="chenxeed.com" target="_blank">chenxeed</a> 2022<br>
+              Music by <a href="https://www.youtube.com/watch?v=r5Lr7NC50z0" target="_blank">It's You - Sezairi</a>
             </div>
             <div class="h-[70px]"/>
           </div>
