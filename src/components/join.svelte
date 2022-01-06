@@ -39,6 +39,9 @@ function encodeHTML(s) {
   <a href="https://forms.gle/K9f4uH3mMPLmiLZc6" target="_blank">
     <img src={ rsvp } alt="rsvp" class="w-64 my-10 animate-pulse"/>
   </a>
+  <p class="italic">
+    NOTE: To keep social distancing with each other, the invitation is valid for 2 Person only. We apologize for the inconvenience.
+  </p>
   {:else}
   <a href="https://www.instagram.com/italovestoryofkev/" target="_blank">
     <img src={ livestream } alt="live stream" class="w-80 my-10"/>
@@ -47,7 +50,7 @@ function encodeHTML(s) {
   {#if showTestimonialForm}
   <p
     in:fade="{{ duration: 2000, delay: 1000 }}" out:fade
-    class="text-lg font-semibold text-center ff-body">
+    class="mt-2 text-lg font-semibold text-center ff-body">
     You can write a testimonial to wish Kelvin & Rita:
   </p>
   <textarea
@@ -61,7 +64,7 @@ function encodeHTML(s) {
   {/if}
   <p
     in:fade="{{ duration: 2000, delay: 1000 }}" out:fade
-    class="relative z-10 text-4xl font-extrabold text-center ff-main text-yellow-600">
+    class="mt-2 relative z-10 text-4xl font-extrabold text-center ff-main text-yellow-600">
     Testimonial
   </p>
   <div class="ff-body overflow-auto w-full mb-10">
