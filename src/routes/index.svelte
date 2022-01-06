@@ -179,12 +179,12 @@ function toggleMusic () {
 
 @font-face {
   font-family: "Body";
-  src: url("/fonts/JosefinSlab-Regular.ttf");
+  src: url("/fonts/Raleway-ExtraLight.ttf");
   font-display: block;
 }
 @font-face {
   font-family: "Body";
-  src: url("/fonts/JosefinSlab-Bold.ttf");
+  src: url("/fonts/Raleway-Medium.ttf");
   font-weight: bold;
   font-display: block;
 }
