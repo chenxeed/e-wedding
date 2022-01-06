@@ -173,7 +173,7 @@ function toggleMusic () {
 <style global lang="postcss">
 @font-face {
   font-family: "Main";
-  src: url("/fonts/Parisienne-Regular.ttf");
+  src: url("/fonts/CreamCandy.otf");
   font-display: block;
 }
 

@@ -13,12 +13,14 @@ import gallery7 from '../assets/gallery/7.jpeg';
 import gallery8 from '../assets/gallery/8.jpeg';
 import gallery9 from '../assets/gallery/9.jpeg';
 import gallery10 from '../assets/gallery/10.jpeg';
+import gallery11 from '../assets/gallery/11.jpeg';
+import gallery12 from '../assets/gallery/12.jpeg';
 
 let showTitle = false;
 let windowSize = document.body.clientWidth;
 $: galleryMaxColumnWidth = windowSize < 640 ? 100 : 250;
 
-const images = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6, gallery7, gallery8, gallery9, gallery10];
+const images = [gallery1, gallery2, gallery3, gallery5, gallery4, gallery11, gallery6, gallery7, gallery8, gallery9, gallery12, gallery10];
 
 onMount(() => {
   window.addEventListener('resize', onWindowResized)
@@ -42,7 +44,7 @@ function onWindowResized () {
       <p
         transition:fade="{{ duration: 2000, delay: 1000 }}"
         class="text-center font-semibold text-4xl mt-10 ff-main">Gallery</p>
-      <div class="mt-10 md:w-[768px] mx-auto">
+      <div class="mt-10 md:w-[768px] mx-auto gallery">
         <Gallery gap={10} maxColumnWidth={galleryMaxColumnWidth}>
           {#each images as image, i}
             <img
@@ -59,8 +61,9 @@ function onWindowResized () {
 @tailwind components;
 @tailwind utilities;
 
-.photo-shadow {
-  box-shadow: 2px 2px 5px black;;
+:global(.gallery img) {
+  opacity: .9; transition: all .2s;
+  @apply border-4 border-white focus:scale-125 focus:z-10 ;
+  box-shadow: 2px 2px 5px black;
 }
-
 </style>

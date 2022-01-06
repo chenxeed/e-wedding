@@ -62,11 +62,11 @@ function openInvitation () {
         </div>
         <p class="mt-5 text-right" in:fly={{ duration: 2000, delay: 2000 }}>for the wedding of</p>
         <p class="mt-5 text-right ff-main" in:fly={{ duration: 2000, delay: 3000 }}>
-          <span class="text-4xl text-yellow-700">Kelvin</span>
+          <span class="text-5xl text-yellow-700">Kelvin</span>
           <br/>
-          <span class="text-2xl">&</span>
+          <span class="text-3xl">and</span>
           <br/>
-          <span class="text-4xl text-yellow-700">Rita</span>
+          <span class="text-5xl text-yellow-700">Rita</span>
         </p>
         <div class="mt-5">
           <button

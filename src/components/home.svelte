@@ -22,9 +22,9 @@ const guest = getInvitedGuest();
     class="relative z-10 text-lg font-semibold text-center text-shadow mt-8 lg:mt-0"
     transition:slide="{{ duration: 2000, delay: 1000 }}">You are cordially invited to attend the wedding of</p>
   <p
-    class="relative z-10 text-4xl font-extrabold text-center ff-main mt-12 lg:mt-0 text-yellow-600"
+    class="relative z-10 text-5xl font-extrabold text-center ff-main mt-12 lg:mt-0 text-yellow-600"
     transition:slide="{{ duration: 2000, delay: 3000 }}">
-      Kelvin & Rita
+      Kelvin and Rita
   </p>
     <p
       class="relative z-10 text-xl font-extrabold px-4 self-start lg:self-center lg:text-center bg-gray-50 bg-opacity-50 p-4 mt-16 lg:mt-0"
