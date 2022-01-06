@@ -77,10 +77,10 @@ function entranceDone () {
 
 function toggleMusic () {
   if (muted === false) {
-    audio.fade(.5, 0, 1000);
+    audio.pause()
     muted = true
   } else {
-    audio.fade(0, .5, 1000);
+    audio.play()
     muted = false
   }
 }
