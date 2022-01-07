@@ -59,7 +59,7 @@ function encodeHTML(s) {
     style="height: 200px;" class="shadow-sm mt-1 p-2 block w-full sm:text-sm border-gray-600 rounded-md"></textarea>
     <button
       in:fade="{{ duration: 2000, delay: 1000 }}" out:fade
-      class="bg-yellow-600 hover:bg-yellow-400 text-white text-xs font-bold py-2 px-4 my-4 border-b-4 border-yellow-700 hover:border-yellow-500 rounded"
+      class="bg-blue-600 hover:bg-blue-400 text-white text-xs font-bold py-2 px-4 my-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
       on:click={ onSubmitTestimonial }>Send</button>
   {/if}
   <p
